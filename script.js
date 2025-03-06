@@ -1,18 +1,12 @@
-let output = document.getElementById("output");
-console.log(output);
-let text = document.getElementById("text").value();
-console.log(text);
-let delay = document.getElementById("delay").value();
-console.log(delay);
+const outputDiv = document.getElementById("output");
+const textInput = document.getElementById("text");
+const delayInput = document.getElementById("delay");
+const button = document.getElementById("btn");
 
-document.getElementById("btn").addEventListener("click", async () => {
-	let p = new Promise((resolve, reject) => {
-		setTimeout(() => {
-			resolve();
-		}, delay)
-	});
-
-	let res = await p;
-	output.innerText = text;
-	console.log("innerText", output.innerText);
-});
+button.addEventListener("click", async () => {
+	const text = textInput.value;
+	const delay = parseInt(delayInput.value);
+	outputDiv.innerHTML = "";
+	await new Promise((resolve => setTimeout(resove, delay)); 
+	outputDiv.innerText = text;
+);		
